@@ -10,7 +10,7 @@ jobs:
       - name: Run GitHub Action for ORT
         uses: oss-review-toolkit/ort-ci-github-action@v1
         with:
-          vcs-url: 'https://github.com/apache/httpcomponents-client'
+          vcs-url: 'https://github.com/apache/httpcomponents-client/tree/5.4.1-RC1'
           vcs-revision: 'rel/v5.4.4'
           run: >
               cache-dependencies,
