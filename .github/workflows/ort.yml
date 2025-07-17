@@ -1,33 +1,16 @@
 name: ORT Analyzer
 on:
   workflow_dispatch:
-
 jobs:
   ort:
     runs-on: ubuntu-latest
-    timeout-minutes: 720
     steps:
       - name: Use HTTPS instead of SSH for Git cloning
         run: git config --global url.https://github.com/.insteadOf ssh://git@github.com/
-
-      - name: Set up ORT config directory and file
-        run: |
-          mkdir -p ~/.ort/config
-          cat <<EOF > ~/.ort/config/config.yml
-          scanner:
-            options:
-              ScanCode:
-                processes: 2
-                commandLine:
-                  - --max-in-memory
-                  - 2000
-          EOF
-
       - name: Run GitHub Action for ORT
         uses: oss-review-toolkit/ort-ci-github-action@v1
         with:
-          vcs-url: 'https://github.com/itext/itext-java'
-          allow-dynamic-versions: 'true'
+          vcs-url: 'https://github.com/damolaobaleke/QuickPay/tree/5f2f796968a5de74e60de401b49ef715ccaa957d'
           run: >
               cache-dependencies,
               labels,
@@ -39,4 +22,3 @@ jobs:
               upload-results
           ort-cli-args : '-P ort.scanner.skipExcluded=true'
           ort-cli-scan-args: '--package-types=PROJECT'
-
