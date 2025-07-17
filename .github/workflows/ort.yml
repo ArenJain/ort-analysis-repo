@@ -10,7 +10,8 @@ jobs:
       - name: Run GitHub Action for ORT
         uses: oss-review-toolkit/ort-ci-github-action@v1
         with:
-          vcs-url: 'https://github.com/damolaobaleke/QuickPay/tree/5f2f796968a5de74e60de401b49ef715ccaa957d'
+          vcs-url: 'https://github.com/damolaobaleke/QuickPay'
+          vcs-revision: '5f2f796968a5de74e60de401b49ef715ccaa957d'
           run: >
               cache-dependencies,
               labels,
