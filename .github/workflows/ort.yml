@@ -11,6 +11,7 @@ jobs:
         uses: oss-review-toolkit/ort-ci-github-action@v1
         with:
           vcs-url: 'https://github.com/Azure/azure-sdk-for-net'
+          allow-dynamic-versions: 'true'
           run: >
               cache-dependencies,
               labels,
