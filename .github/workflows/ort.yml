@@ -11,11 +11,15 @@ jobs:
         uses: oss-review-toolkit/ort-ci-github-action@v1
         with:
           vcs-url: 'https://github.com/Azure/azure-sdk-for-net'
-          allow-dynamic-versions: 'true'
+	  vcs-path: 'sdk/core/Azure.Core'
           run: >
               cache-dependencies,
               labels,
               analyzer,
+              scanner,
+              advisor,
+              evaluator,
               reporter,
               upload-results
-          
+          ort-cli-args : '-P ort.scanner.skipExcluded=true'
+          ort-cli-scan-args: '--package-types=PROJECT'
