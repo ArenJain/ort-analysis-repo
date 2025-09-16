@@ -10,8 +10,8 @@ jobs:
       - name: Run GitHub Action for ORT
         uses: oss-review-toolkit/ort-ci-github-action@v1
         with:
-          vcs-url: 'https://github.com/ag-grid/ag-grid'
-          vcs-revision: 'v32.3.6'
+          vcs-url: 'https://github.com/eclipse-ee4j/glassfish-hk2'
+          vcs-revision: ''
           run: >
               cache-dependencies,
               labels,
