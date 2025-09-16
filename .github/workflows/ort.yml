@@ -10,7 +10,8 @@ jobs:
       - name: Run GitHub Action for ORT
         uses: oss-review-toolkit/ort-ci-github-action@v1
         with:
-          vcs-url: 'https://github.com/Microsoft/MVP'
+          vcs-url: 'https://github.com/ag-grid/ag-grid'
+          vcs-revision: 'v32.3.6'
           run: >
               cache-dependencies,
               labels,
