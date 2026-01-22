@@ -49,4 +49,4 @@ jobs:
             reporter,
             upload-results
         ort-cli-args: '-P ort.scanner.skipExcluded=true'
-        ort-cli-analyze-args: '--package-types=PROJECT'    
+        ort-cli-analyze-args: '--skip-packages'    
