@@ -5,7 +5,7 @@ on:
       vcs_url:
         description: 'Repository URL to scan'
         required: true
-        default: 'https://github.com/Microsoft/MVP'
+        default: 'https://github.com/Martin-SourceCode/sPortal.git'
 jobs:
   ort-scan:
     runs-on: ubuntu-latest
@@ -37,6 +37,7 @@ jobs:
     - name: Run ORT
       uses: oss-review-toolkit/ort-ci-github-action@v1
       with:
+        image: 'ghcr.io/oss-review-toolkit/ort:76.0.0' 
         vcs-url: '${{ github.event.inputs.vcs_url }}'
         run: >-
             cache-dependencies,
