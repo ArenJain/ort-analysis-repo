@@ -83,6 +83,7 @@ jobs:
         vcs-url: 'https://github.com/WebGoat/WebGoat'
         vcs-revision: 'main'
         allow-dynamic-versions: 'true'
+        image: ghcr.io/oss-review-toolkit/ort:89.3.0
         run: >-
             cache-dependencies,
             labels,
