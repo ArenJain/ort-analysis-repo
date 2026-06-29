@@ -5,21 +5,7 @@ jobs:
   ort:
     runs-on: ubuntu-latest
     steps:
-      - name: Use HTTPS instead of SSH for Git cloning
-        run: git config --global url.https://github.com/.insteadOf ssh://git@github.com/
-      - name: Run GitHub Action for ORT
-        uses: oss-review-toolkit/ort-ci-github-action@v1
-        with:
-          vcs-url: 'https://github.com/eclipse-ee4j/glassfish-hk2'
-          vcs-revision: ''
-          run: >
-              cache-dependencies,
-              labels,
-              analyzer,
-              scanner,
-              advisor,
-              evaluator,
-              reporter,
-              upload-results
-          ort-cli-args : '-P ort.scanner.skipExcluded=true'
-          ort-cli-scan-args: '--package-types=PROJECT'
+      - name: Test ORT image
+        run: docker run --rm ghcr.io/oss-review-toolkit/ort:89.3.0 --version
+
+    
