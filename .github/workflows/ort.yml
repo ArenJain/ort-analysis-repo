@@ -5,7 +5,13 @@ jobs:
   ort:
     runs-on: ubuntu-latest
     steps:
-      - name: Test ORT image
-        run: docker run --rm ghcr.io/oss-review-toolkit/ort:89.3.0 --version
+      - name: Test ORT download
+        run: |
+          docker run --rm \
+            -v $HOME:/home/ort \
+            ghcr.io/oss-review-toolkit/ort:89.3.0 \
+            download \
+            --project-url https://github.com/WebGoat/WebGoat \
+            -o /home/ort/out
 
     
