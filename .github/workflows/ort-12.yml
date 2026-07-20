@@ -5,7 +5,7 @@ on:
       vcs_url:
         description: 'Repository URL to scan'
         required: true
-        default: 'https://github.com/WebGoat/WebGoat'
+        default: 'https://github.com/microsoft/mvp/tree/dev'
       github_token:
         description: 'GitHub Personal Access Token for private repository access'
         required: false
@@ -84,8 +84,8 @@ jobs:
         # broken (missing Kotlin runtime -> NoClassDefFoundError: kotlin/jvm/internal/Intrinsics).
         # 89.0.0 is the last distinct image before that regression.
         image: 'ghcr.io/oss-review-toolkit/ort:89.0.0'
-        vcs-url: 'https://github.com/WebGoat/WebGoat'
-        vcs-revision: 'main'
+        vcs-url: 'https://github.com/microsoft/mvp'
+        vcs-revision: 'dev'
         allow-dynamic-versions: 'true'
         run: >-
             cache-dependencies,
